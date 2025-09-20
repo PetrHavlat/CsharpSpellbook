@@ -36,3 +36,6 @@ packages/
 *.vsp
 *.pidb
 desktop.ini
+ 
+# Custom
+*.ignore.*
