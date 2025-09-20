@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace CsharpSpellbook.Mvvm
+namespace Havlat.CsharpSpellbook.Mvvm
 {
 	/// <summary>
 	/// Provides asynchronous command functionality.
