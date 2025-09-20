@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 
-namespace CsharpSpellbook.Mvvm
+namespace Havlat.CsharpSpellbook.Mvvm
 {
 	/// <summary>
 	/// Base class for objects that implement property change notification.
