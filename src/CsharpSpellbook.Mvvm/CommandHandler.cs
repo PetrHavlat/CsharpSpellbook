@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace CsharpSpellbook.Mvvm
+namespace Havlat.CsharpSpellbook.Mvvm
 {
 	// <summary>
 	/// A command implementation that relays its functionality to the provided delegates.
