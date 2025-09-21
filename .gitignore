@@ -39,3 +39,4 @@ desktop.ini
  
 # Custom
 *.ignore.*
+.continue/
