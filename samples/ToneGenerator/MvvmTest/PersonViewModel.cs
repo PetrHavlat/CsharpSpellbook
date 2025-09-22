@@ -1,4 +1,4 @@
-﻿using Havlat.CsharpSpellbook.Mvvm;
+﻿using Havlat.CsharpSpellbook.Mvvm.Binding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
