@@ -15,7 +15,7 @@ namespace Havlat.CsharpSpellbook.Mvvm.Commands
 	{
 		#region Fields
 
-		private readonly Func<T, bool> _canExecute;
+		private readonly Func<bool> _canExecute;
 		private readonly Func<T, Task> _execute;
 		private bool _isExecuting;
 
@@ -29,7 +29,7 @@ namespace Havlat.CsharpSpellbook.Mvvm.Commands
 		/// <param name="execute">The asynchronous function to execute when the command is invoked.</param>
 		/// <param name="canExecute">The function that determines whether the command can execute.</param>
 		/// <exception cref="ArgumentNullException">Thrown when execute is null.</exception>
-		public AsyncCommandHandler(Func<T, Task> execute, Func<T, bool> canExecute)
+		public AsyncCommandHandler(Func<T, Task> execute, Func<bool> canExecute)
 		{
 			_execute = execute ?? throw new ArgumentNullException(nameof(execute));
 			_canExecute = canExecute;
@@ -61,13 +61,13 @@ namespace Havlat.CsharpSpellbook.Mvvm.Commands
 		/// <returns>True if this command can be executed; otherwise, false.</returns>
 		public bool CanExecute(object parameter)
 		{
-			if (_canExecute == null)
+			if (!_isExecuting && (_canExecute == null || _canExecute()))
 				return true;
 
 			if (parameter == null && typeof(T).IsValueType)
 				return false;
 
-			return _canExecute((T)parameter);
+			return _canExecute(parameter);
 		}
 
 		/// <summary>
